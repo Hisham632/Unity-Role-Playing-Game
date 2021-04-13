@@ -7,6 +7,8 @@ public class Bricks : MonoBehaviour
 {
     public static int SCORE;//declared static so all the bricks have the same score
 
+  
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
             Destroy(gameObject);//When the ball hits the brick, it destroys itself
@@ -18,4 +20,8 @@ public class Bricks : MonoBehaviour
         
 
     }
+
+
+   
+   
 }
