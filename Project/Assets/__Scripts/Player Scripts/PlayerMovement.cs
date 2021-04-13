@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        SetScore();//calls the SetScore function
 
         _isGrounded = Physics2D.OverlapCircle(feetpos.position, checkRadius);// checks if the player is in the ground
 
@@ -105,7 +106,6 @@ public class PlayerMovement : MonoBehaviour
             healthBar.SetMaxHealth(HEALTH);
             MAX_HEALTH = HEALTH;
         }
-        SetScore();//calls the SetScore function
 
     }
 
@@ -121,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetScore() // SetScore() method 
     {
+        Debug.Log("124: "+DiamondScript.POINT);
         score.text = "Score: " +  DiamondScript.POINT.ToString(); // changes the score text each time a pickup GameObject is picked to display it 
 
     }
