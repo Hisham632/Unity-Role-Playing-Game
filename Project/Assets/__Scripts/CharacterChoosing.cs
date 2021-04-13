@@ -7,12 +7,14 @@ public class CharacterChoosing : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
     public static GameObject CHARACTER;
+    public float xPosition;
+    public float yPosition;
 
 
     // Start is called before the first frame update
     void Awake()
     {
-        transform.position = new Vector3(-59, 4.2f, 0);
+        transform.position = new Vector3(xPosition, yPosition, 0);
         int characterToSpawn = PlayerPrefs.GetInt("CharacterSelected");//gets which preFab did the user select
 
         if (characterToSpawn == 0)// if he chooses the first character then the first one is instantiated 
