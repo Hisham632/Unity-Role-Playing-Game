@@ -24,7 +24,7 @@ public class Paddle : MonoBehaviour
     {
         _inputAxis = Input.GetAxisRaw("Horizontal");// gets the axis
         _rb.velocity = Vector2.right * _inputAxis * speed;//to move the paddle
-
+        SetScore();
 
     }
 
