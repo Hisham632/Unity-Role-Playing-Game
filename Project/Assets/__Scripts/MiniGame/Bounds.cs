@@ -4,19 +4,8 @@ using UnityEngine;
 
 public class Bounds : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)// if it hits the bottom wall which has an OnTrigger it'll call the respawn function in the ball script
     {
         collision.GetComponent<Ball>().Respawn();
     }

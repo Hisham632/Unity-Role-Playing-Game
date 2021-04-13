@@ -7,20 +7,20 @@ using UnityEngine.UI;
 public class Ball : MonoBehaviour
 {
     public float speed = 8f;
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;//rigidbody
  
      // Use this for initialization*/
     void Start()
     {
 
-        Respawn();
+        Respawn();//calls the Respawn function
     }
 
    
     public void Respawn()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();// gets the RigidBody2D component
         transform.position = Vector3.zero;
-        rb.velocity = Random.insideUnitCircle * speed;
+        _rb.velocity = Random.insideUnitCircle * speed;//gives the ball a velocity in a random direction at the start
     }
 }

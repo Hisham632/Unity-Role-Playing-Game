@@ -11,14 +11,14 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = CharacterChoosing.character.transform;
+        player = CharacterChoosing.CHARACTER.transform;//depending on what character the user chooses we assign it to player so the camera follow him
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player != null)
+        if (player != null)//updates the cameras position to always view the player
         {
             Vector3 temp = transform.position;
             temp.x = player.position.x;

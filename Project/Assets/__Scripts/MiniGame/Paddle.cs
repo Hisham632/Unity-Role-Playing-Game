@@ -6,20 +6,20 @@ public class Paddle : MonoBehaviour
 {
     public float speed = 5f;
 
-    private float inputAxis;
-    private Rigidbody2D rb;
+    private float _inputAxis;
+    private Rigidbody2D _rb;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        inputAxis = Input.GetAxisRaw("Horizontal");
-        rb.velocity = Vector2.right * inputAxis * speed;
+        _inputAxis = Input.GetAxisRaw("Horizontal");// gets the axis
+        _rb.velocity = Vector2.right * _inputAxis * speed;//to move the paddle
 
 
     }

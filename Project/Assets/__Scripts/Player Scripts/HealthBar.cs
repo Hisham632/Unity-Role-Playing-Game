@@ -5,20 +5,16 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider slider;
+    public Slider slider;//reference to the slider
 
-    public void SetHealth(float health)
+    public void SetHealth(float health)//to set the health slider's value
     {
         slider.value = health;
-        Debug.Log("13 Health: " + health);
-        Debug.Log("14 SliderValue: " + slider.value);
-
 
     }
 
-    public void SetMaxHealth(float health)
+    public void SetMaxHealth(float health)//to set the health slider's max value of health, called if it goes above the max health
     {
-        Debug.Log("21 MAXHealth: " + health);
         slider.maxValue = health;
         slider.value = health;
 

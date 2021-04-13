@@ -10,8 +10,8 @@ public class EnemySpider : MonoBehaviour
     {
         if (target.gameObject.tag == "Player")// if it has the Player gameTag it will kill him
         {
-            PlayerMovement.health--;
-            if(PlayerMovement.health<=0)
+            PlayerMovement.HEALTH--;// decreases the player's health everytime hes hit by an enemy
+            if(PlayerMovement.HEALTH <= 0)// if the player's health is 0 he dies
             {
                 Destroy(target.gameObject);
             }

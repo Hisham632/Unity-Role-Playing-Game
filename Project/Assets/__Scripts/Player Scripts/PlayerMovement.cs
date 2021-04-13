@@ -18,13 +18,11 @@ public class PlayerMovement : MonoBehaviour
     private bool _isJumping;// checks if its jumping
     private Animator _anim;// for animation
 
-    public static float maxHealth = 5;
+    public static float MAX_HEALTH = 5;// the maxHealth value
 
-    public static float health = 5;
-    private int points = DiamondScript.point;
-
-    public HealthBar healthBar;
-
+    public static float HEALTH = 5;
+    private int _points = DiamondScript.POINT;
+    public HealthBar healthBar;//Health Bar
     public TextMeshProUGUI score;// Text variable score used to display the score 
 
 
@@ -37,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        healthBar.SetMaxHealth(maxHealth);
-        SetScore();
+        healthBar.SetMaxHealth(MAX_HEALTH);//calls the SetMaxHealth function in the healthBar class to set the max value of the bar
+        SetScore();// displays the score to be 0 at the start
     }
 
     // Update is called once per frame
@@ -74,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         if (_isGrounded == true && Input.GetKeyDown(KeyCode.Space))// if the player is on the ground then allow the player to jump if he presses the spaceBar
         {
             _isJumping = true;
-            _jumpTimeCounter = jumpTime;
+            _jumpTimeCounter = jumpTime;//resets the jumpTimeCounter
             _rb.velocity = Vector2.up * jumpForce;
 
 
@@ -90,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                _isJumping = false;
+                _isJumping = false;// otherwise its not
             }
 
         }
@@ -100,52 +98,34 @@ public class PlayerMovement : MonoBehaviour
             _isJumping = false;
         }
 
-        setSpeed();
-        healthBar.SetHealth(health);
-        if(health>maxHealth)
+        SetSpeed();//calls the SetSpeed function
+        healthBar.SetHealth(HEALTH);//calls the SetHealth to set the current health to the bar
+        if(HEALTH > MAX_HEALTH)// if the current health is greater than the maxHealth then it sets that as the new maxValue
         {
-            healthBar.SetMaxHealth(health);
-            maxHealth = health;
+            healthBar.SetMaxHealth(HEALTH);
+            MAX_HEALTH = HEALTH;
         }
-        SetScore();
-        Debug.Log(score.text);
+        SetScore();//calls the SetScore function
 
     }
 
-    private void setSpeed()
+    private void SetSpeed()
     {
-        if(points<DiamondScript.point)
+        if(_points<DiamondScript.POINT)// if the player collects diamonds, he's speed will increase by .05*#ofPoints and it'll reset
         {
-            speed = speed + .05f * DiamondScript.point;
-            points = DiamondScript.point;
+            speed = speed + .05f * DiamondScript.POINT;
+            _points = DiamondScript.POINT;
 
         }
-      //  Debug.Log("Speed: " + speed);//TEXT
     }
 
     private void SetScore() // SetScore() method 
     {
-        score.text = "Score: " +  DiamondScript.point.ToString(); // changes the score text each time a pickup GameObject is picked to display it 
-        
-        
-        /*if(_countOfPickups >= numOfPickups) // checks if all the pickup GameObjects have been picked up 
-        {
-            Time.timeScale = 0;// assigning Time.timeScale=0 to pause the game
-            gameOver.text = "You Win!!!"; // if all the pickup GameObjects have been picked up it displays the corresponding text
-            StartCoroutine(Wait()); // We start the Coroutine and call the Wait() method
-        }*/
+        score.text = "Score: " +  DiamondScript.POINT.ToString(); // changes the score text each time a pickup GameObject is picked to display it 
 
     }
 
-    /*
-    private IEnumerator Wait()
-    {
-        yield return new WaitForSecondsRealtime(3); // waits 3 seconds, we use WaitForSecondsRealtime so timeScale=0 doesnt affect it 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);// restarts the game after waiting 3 seconds
-        Time.timeScale = 1;// assigning Time.timeScale=1 to resume the game after it restarts
-    }*/
-
-    public void BouncePlayer(float force)
+    public void BouncePlayer(float force)//if the player hits the bouncer pad, he'll be launched upwards
     {
         if (_isGrounded)
         {
