@@ -394,6 +394,8 @@ MonoBehaviour:
   checkRadius: 0.3
   jumpForce: 10
   jumpTime: 0.3
+  healthBar: {fileID: 0}
+  score: {fileID: 0}
 --- !u!114 &907368069
 MonoBehaviour:
   m_ObjectHideFlags: 0

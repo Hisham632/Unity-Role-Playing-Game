@@ -9,9 +9,10 @@ public class CameraController : MonoBehaviour
     public float maxX;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        player = GameObject.Find("FeetPos").transform;// so the camera follows the Player's movement  //hello
+        player = CharacterChoosing.character.transform;
+
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class CameraController : MonoBehaviour
             Vector3 temp = transform.position;
             temp.x = player.position.x;
             temp.y = player.position.y + 4f;
-           
+
             transform.position = temp;
 
         }

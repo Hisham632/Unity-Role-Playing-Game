@@ -6,38 +6,28 @@ public class CharacterChoosing : MonoBehaviour
 {
     public GameObject player1;
     public GameObject player2;
-    private CameraController cam;
+    private CameraController camera;
+    public static GameObject character;
 
-  
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
-        cam.GetComponent<CameraController>();
         transform.position = new Vector3(-59, 4.2f, 0);
         int characterToSpawn = PlayerPrefs.GetInt("CharacterSelected");
-        if(characterToSpawn==0)
+
+        if (characterToSpawn == 0)
         {
-            Instantiate(player1, transform.position, Quaternion.identity);
-
-            cam.player = player1.transform;
-
-
+            character = Instantiate(player1, transform.position, Quaternion.identity);
 
         }
         else if (characterToSpawn == 1)
         {
-            Instantiate(player2, transform.position, Quaternion.identity);
-            cam.player = player2.transform;
+            character = Instantiate(player2, transform.position, Quaternion.identity);
 
         }
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

@@ -80,7 +80,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3436658207897836575
 Transform:
   m_ObjectHideFlags: 0
@@ -231,6 +231,8 @@ MonoBehaviour:
   checkRadius: 0
   jumpForce: 8
   jumpTime: 0.3
+  healthBar: {fileID: 0}
+  score: {fileID: 0}
 --- !u!1 &6478013338537664252
 GameObject:
   m_ObjectHideFlags: 0

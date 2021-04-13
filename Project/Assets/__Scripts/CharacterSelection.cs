@@ -38,7 +38,7 @@ public class CharacterSelection : MonoBehaviour
     public void ConfirmButton()
     {
         PlayerPrefs.SetInt("CharacterSelected",index);
-        SceneManager.LoadScene("se2250_group_phase1");//loads the game scene
+        SceneManager.LoadScene("Level1");//loads the game scene
     }
 
     
