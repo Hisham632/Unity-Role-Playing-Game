@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bouncy : MonoBehaviour
 {
-    public float force = 500f;
+    public float force = 1000f;
     private Animator _anim;
 
 

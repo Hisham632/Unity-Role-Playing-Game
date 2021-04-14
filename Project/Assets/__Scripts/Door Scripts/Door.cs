@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
 
-    public static Door instance;
+    public static Door INSTANCE;
     private BoxCollider2D _box;
     private Animator _anim;
 
@@ -22,9 +22,9 @@ public class Door : MonoBehaviour
 
     void MakeInstance()
     {
-        if (instance == null)
+        if (INSTANCE == null)
         {
-            instance = this;
+            INSTANCE = this;
         }
     }
 

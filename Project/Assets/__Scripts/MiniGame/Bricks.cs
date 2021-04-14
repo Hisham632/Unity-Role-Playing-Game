@@ -13,7 +13,7 @@ public class Bricks : MonoBehaviour
     {
             Destroy(gameObject);//When the ball hits the brick, it destroys itself
              SCORE++;//adds the score
-            if (SCORE == 3)// For the demo we put if it hits 3 bricks you win and go back to level 2
+            if (SCORE == 5)// For the demo we put if it hits 5 bricks you win and go back to level 2
             {
                 SceneManager.LoadScene("Level2");
             }

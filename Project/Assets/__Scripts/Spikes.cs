@@ -5,11 +5,11 @@ using UnityEngine;
 public class Spikes : MonoBehaviour
 {
 
-    private PlayerMovement player;
+    private PlayerMovement _player;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
     void OnTriggerEnter2D(Collider2D col)
     {

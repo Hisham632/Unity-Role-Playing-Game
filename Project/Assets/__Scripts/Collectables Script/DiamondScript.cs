@@ -8,9 +8,9 @@ public class DiamondScript : MonoBehaviour
 
     void Start()
     {
-        if (Door.instance != null && MiniGameDoor.instance != null)// makes sure the the Door INSTANCE variable is not null
+        if (Door.INSTANCE != null && MiniGameDoor.INSTANCE != null)// makes sure the the Door INSTANCE variable is not null
         {
-            Door.instance.collectablesCount++; //when the gameObject touches the player increment collectablesCount value
+            Door.INSTANCE.collectablesCount++; //when the gameObject touches the player increment collectablesCount value
         }
 
     }
@@ -41,9 +41,9 @@ public class DiamondScript : MonoBehaviour
                 PlayerMovement.HEALTH += .4f;//adds .4 to the player's health
             }
 
-             if (Door.instance != null && MiniGameDoor.instance != null)// makes sure the the Door INSTANCE variable is not null
+             if (Door.INSTANCE != null && MiniGameDoor.INSTANCE != null)// makes sure the the Door INSTANCE variable is not null
              {
-                 Door.instance.DecremenetCollectables();// when the gameObject touches the player we call DecremenetCollectables() in Door class
+                 Door.INSTANCE.DecremenetCollectables();// when the gameObject touches the player we call DecremenetCollectables() in Door class
              }
 
         }

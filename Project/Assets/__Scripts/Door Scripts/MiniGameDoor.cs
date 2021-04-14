@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MiniGameDoor : MonoBehaviour
 {
 
-    public static MiniGameDoor instance;
+    public static MiniGameDoor INSTANCE;
     private BoxCollider2D _box;
     private Animator _anim;
 
@@ -28,9 +28,9 @@ public class MiniGameDoor : MonoBehaviour
 
     void MakeInstance()
     {
-        if (instance == null)
+        if (INSTANCE == null)
         {
-            instance = this;
+            INSTANCE = this;
         }
     }
 
