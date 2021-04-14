@@ -107,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
             healthBar.SetMaxHealth(HEALTH);
             MAX_HEALTH = HEALTH;
         }
+        SetScore();//calls the SetScore function
 
     }
 
