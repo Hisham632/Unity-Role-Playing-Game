@@ -23,7 +23,7 @@ public class MiniGameDoor : MonoBehaviour
 
     void Start()
     {
-        OpenDoor();
+        OpenDoor(); //open the door
     }
 
     void MakeInstance()
@@ -34,16 +34,6 @@ public class MiniGameDoor : MonoBehaviour
         }
     }
 
-  /*  public void PointsDoor()
-        {
-           if (DiamondScript.point == 0) //when at least one collectable has been collected
-            {
-                StartCoroutine(OpenDoor()); //open door
-            }
-        }
-  */
-    
-
     IEnumerator OpenDoor()
     {
         _anim.Play("Open"); // plays the opening door animation 
@@ -53,15 +43,11 @@ public class MiniGameDoor : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D target)
     {
-        if (target.tag == "Player" || target.tag == "Player2") // when the character enters through a door the game ends 
+        if (target.tag == "Player" || target.tag == "Player2") // when the character enters through a door 
         {
-            Debug.Log("Going to MiniGame");// prints Game Finished in the Log
-        }
-        if (target.tag == "Player" || target.tag == "Player2")
-        {
-            if (gameObject.tag == "Door2")
+            if (gameObject.tag == "Door2") //if it is door 2
             {
-                SceneManager.LoadScene("MiniGame");
+                SceneManager.LoadScene("MiniGame"); //load the minigame
             }
 
 

@@ -1726,7 +1726,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Door4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1005207990, guid: a2e3dfb26e870214292248334b688843, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2e3dfb26e870214292248334b688843, type: 3}
 --- !u!1001 &457929900
 PrefabInstance:
@@ -2759,6 +2760,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dc37809c82ace04197efd88b98d8b7a, type: 3}
+--- !u!1 &985577572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2171855498537338756, guid: a2e3dfb26e870214292248334b688843,
+    type: 3}
+  m_PrefabInstance: {fileID: 423505539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &985577573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985577572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84870e87fe675c4bab9b4194e9a45df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectablesCount: 0
 --- !u!1001 &994946324
 PrefabInstance:
   m_ObjectHideFlags: 0

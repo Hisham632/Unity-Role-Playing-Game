@@ -48,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        SetScore();//calls the SetScore function
 
         _isGrounded = Physics2D.OverlapCircle(feetpos.position, checkRadius);// checks if the player is in the ground
 
@@ -106,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
             healthBar.SetMaxHealth(HEALTH);
             MAX_HEALTH = HEALTH;
         }
+        SetScore();//calls the SetScore function
 
     }
 

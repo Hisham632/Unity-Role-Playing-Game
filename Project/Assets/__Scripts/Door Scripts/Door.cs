@@ -46,28 +46,16 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D target)
     {
-        if (target.tag == "Player" || target.tag == "Player2") // when the character enters through a door the game ends 
+        if(target.tag == "Player" || target.tag == "Player2") // when the character enters through a door 
         {
-            Debug.Log("Game Finished");// prints Game Finished in the Log
-        }
-        if(target.tag == "Player" || target.tag == "Player2")
-        {
-            if (gameObject.tag == "Door1")
+            if (gameObject.tag == "Door1") //if it is door 1, load the next level 
             {
                 SceneManager.LoadScene("Level2");
             }
-          /*  else if(gameObject.tag == "Door2")
-            {
-                SceneManager.LoadScene("MiniGame");
-            }
-            else if(gameObject.tag == "Door3")
-            {
-                SceneManager.LoadScene("Level2");
-            }
-          */
-            else if(gameObject.tag == "Door4")
+            else if(gameObject.tag == "Door4") //if it is door 4, load the end scene
             {
                 //escaped the cave
+                SceneManager.LoadScene("End");
                 Debug.Log("You have escaped the cave!");
 
             }
