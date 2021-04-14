@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();// gets the rigidbody component 
         _anim = GetComponent<Animator>();  // Passing the animator because we want to get the animator component
+
     }
 
     private void Start()
